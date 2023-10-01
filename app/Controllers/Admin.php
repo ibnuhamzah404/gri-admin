@@ -6,6 +6,6 @@ class Admin extends BaseController
 {
     public function index()
     {
-        return view('admin/dashboard/v_dashboard.php');
+        return view('admin/dashboard/pages/p_dashboard');
     }
 }

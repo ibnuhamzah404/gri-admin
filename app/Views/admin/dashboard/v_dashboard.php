@@ -5,27 +5,31 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>AdminLTE 3 | Dashboard</title>
-
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
-
-  <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
-
-  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-
-  <link rel="stylesheet" href="plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
-
-  <link rel="stylesheet" href="plugins/icheck-bootstrap/icheck-bootstrap.min.css">
-
-  <link rel="stylesheet" href="plugins/jqvmap/jqvmap.min.css">
+  <link rel="stylesheet" href="<?= base_url() . 'assets/admin/css/jqvmap.min.css' ?>">
 
 
   <link href="<?= base_url() . 'assets/admin/css/admin-lte.css' ?>" type="text/css" rel="stylesheet">
 
-  <link rel="stylesheet" href="plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
 
-  <link rel="stylesheet" href="plugins/daterangepicker/daterangepicker.css">
+  <link rel="stylesheet" href="https://adminlte.io/themes/v3/plugins/fontawesome-free/css/all.min.css">
 
-  <link rel="stylesheet" href="plugins/summernote/summernote-bs4.min.css">
+  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+
+  <link rel="stylesheet" href="https://adminlte.io/themes/v3/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
+
+  <link rel="stylesheet" href="https://adminlte.io/themes/v3/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+
+  <link rel="stylesheet" href="https://adminlte.io/themes/v3/plugins/jqvmap/jqvmap.min.css">
+
+  <link rel="stylesheet" href="https://adminlte.io/themes/v3/dist/css/adminlte.min.css?v=3.2.0">
+
+  <link rel="stylesheet" href="https://adminlte.io/themes/v3/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+
+  <link rel="stylesheet" href="https://adminlte.io/themes/v3/plugins/daterangepicker/daterangepicker.css">
+
+  <link rel="stylesheet" href="https://adminlte.io/themes/v3/plugins/summernote/summernote-bs4.min.css">
+
   <script nonce="b0b97d74-9d1a-4723-8cd0-d67d971d1fbf">
     (function(w, d) {
       ! function(j, k, l, m) {
@@ -160,7 +164,7 @@
             <a href="#" class="dropdown-item">
 
               <div class="media">
-                <img src="dist/img/user8-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">
+                <img src="https://adminlte.io/themes/v3/dist/img/user8-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">
                 <div class="media-body">
                   <h3 class="dropdown-item-title">
                     John Pierce
@@ -371,6 +375,31 @@
             </div>
 
           </div>
+          <div class="row">
+            <div class="col-lg-12 connectedSortable ui-sortable">
+              <div class="card">
+                <div class="card-header ui-sortable-handle" style="cursor: move;">
+                  <h3 class="card-title">
+                    <i class="fas fa-chart-pie mr-1"></i>
+                    Sales
+                  </h3>
+                  <div class="card-tools">
+                    <ul class="nav nav-pills ml-auto">
+                      <li class="nav-item">
+                        <a class="nav-link active" href="#revenue-chart" data-toggle="tab">Area</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#sales-chart" data-toggle="tab">Donut</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="card-body">
+                  <canvas id="myChart" style="width:100%;"></canvas>
+                </div>
+              </div>
+            </div>
+          </div>
 
 
 
@@ -393,46 +422,71 @@
     </aside>
 
   </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+  <script>
+    const xValues = [50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150];
+    const yValues = [7, 8, 8, 9, 9, 9, 10, 11, 14, 14, 15];
+
+    new Chart("myChart", {
+      type: "line",
+      data: {
+        labels: xValues,
+        datasets: [{
+          fill: false,
+          lineTension: 0,
+          backgroundColor: "rgba(0,0,255,1.0)",
+          borderColor: "rgba(0,0,255,0.1)",
+          data: yValues
+        }]
+      },
+      options: {
+        legend: {
+          display: false
+        },
+        scales: {
+          yAxes: [{
+            ticks: {
+              min: 6,
+              max: 16
+            }
+          }],
+        }
+      }
+    });
+  </script>
 
   <script src="https://adminlte.io/themes/v3/plugins/jquery/jquery.min.js"> </script>
 
 
 
-  <script src="https://adminlte.io/themes/v3/dist/js/adminlte.js?v=3.2.0"> </script>
 
-  <script src="<?= base_url() . 'admin/js/jquery-min.js' ?>"></script>
-  <script src="<?= base_url() . 'admin/js/jquery-ui.js' ?>"></script>
-  <script src="plugins/jquery-ui/jquery-ui.min.js"></script>
+
+
+  <script src="<?= base_url() . 'assets/admin/js/jquery-min.js' ?>"></script>
+  <script src="<?= base_url() . 'assets/admin/js/jquery-ui.js' ?>"></script>
+  <script src="<?= base_url() . 'assets/admin/js/adminltejs.js' ?>"></script>
+  <script src="<?= base_url() . 'assets/admin/js/dashboardjs.js' ?>"></script>
+
+
 
   <script>
     $.widget.bridge('uibutton', $.ui.button)
   </script>
 
-  <script src="<?= base_url() . 'admin/js/bootstrapjs.js' ?>"></script>
+  <script src="<?= base_url() . 'assets/admin/js/bootstrapjs.js' ?>"></script>
 
-  <script src="plugins/chart.js/Chart.min.js"></script>
 
-  <script src="plugins/sparklines/sparkline.js"></script>
 
-  <script src="plugins/jqvmap/jquery.vmap.min.js"></script>
-  <script src="plugins/jqvmap/maps/jquery.vmap.usa.js"></script>
+  <script src="https://adminlte.io/themes/v3/plugins/jquery/jquery.min.js"></script>
 
-  <script src="plugins/jquery-knob/jquery.knob.min.js"></script>
+  <script src="https://adminlte.io/themes/v3/plugins/jquery-ui/jquery-ui.min.js"></script>
 
-  <script src="plugins/moment/moment.min.js"></script>
-  <script src="plugins/daterangepicker/daterangepicker.js"></script>
+  <script>
+    $.widget.bridge('uibutton', $.ui.button)
+  </script>
 
-  <script src="plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
 
-  <script src="plugins/summernote/summernote-bs4.min.js"></script>
 
-  <script src="plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
-
-  <script src="<?= base_url() . 'admin/js/adminltejs.js' ?>"></script>
-
-  <script src="dist/js/demo.js"></script>
-
-  <script src="<?= base_url() . 'admin/js/dashboardjs.js' ?>"></script>
 </body>
 
 </html>
