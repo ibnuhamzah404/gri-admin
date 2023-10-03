@@ -6,7 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>AdminLTE 3 | Dashboard</title>
     <link rel="stylesheet" href="<?= base_url() . 'assets/admin/css/jqvmap.min.css' ?>">
-
+    <link rel="stylesheet" type="text/css" href="<?= base_url() . 'assets/admin/js/gantt/lib/jquery-ui-1.8.4.css' ?> " />
+    <link rel="stylesheet" type="text/css" href="<?= base_url() . 'assets/admin/js/gantt/example/reset.css' ?> " />
+    <link rel="stylesheet" type="text/css" href="<?= base_url() . 'assets/admin/js/gantt/jquery.ganttView.css' ?> " />
 
     <link href="<?= base_url() . 'assets/admin/css/admin-lte.css' ?>" type="text/css" rel="stylesheet">
 
@@ -29,6 +31,14 @@
     <link rel="stylesheet" href="https://adminlte.io/themes/v3/plugins/daterangepicker/daterangepicker.css">
 
     <link rel="stylesheet" href="https://adminlte.io/themes/v3/plugins/summernote/summernote-bs4.min.css">
+    <style>
+        body {
+            font-family: tahoma, verdana, helvetica;
+            font-size: 0.8em;
+            padding: 10px;
+        }
+    </style>
+
 
     <script nonce="b0b97d74-9d1a-4723-8cd0-d67d971d1fbf">
         (function(w, d) {
@@ -94,3 +104,10 @@
         })(window, document);
     </script>
 </head>
+
+<body class="hold-transition sidebar-mini layout-fixed">
+    <div class="wrapper">
+
+        <div class="preloader flex-column justify-content-center align-items-center">
+            <img class="animation__shake" src="<?= base_url() . 'assets/admin/img/logo.png' ?>"" alt=" AdminLTELogo" height="200" width="200">
+        </div>

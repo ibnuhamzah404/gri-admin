@@ -8,4 +8,14 @@ class Admin extends BaseController
     {
         return view('admin/dashboard/pages/p_dashboard');
     }
+
+    public function proyek()
+    {
+        return view('admin/proyek/pages/p_proyek');
+    }
+
+    public function gant()
+    {
+        return view('gant');
+    }
 }

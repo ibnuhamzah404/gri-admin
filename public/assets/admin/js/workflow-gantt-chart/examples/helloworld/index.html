@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>Workflow Gantt Chart Example</title>
+	<link href="https://www.cssscript.com/wp-includes/css/sticky.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simple-gantt-chart@0.0.4/dist/index.css">
+	<style>
+		html {
+			font-family: 'Open Sans';
+		}
+		body { background: #efefef; }
+		.container { margin: 150px auto; max-width: 960px; }
+	</style>
+</head>
+<body><div id="css-script-menu">
+  <div class="css-script-center">
+    <ul>
+      <li><a href="https://www.cssscript.com/workflow-gantt-chart/">Download</a></li>
+      <li><a href="https://www.cssscript.com/">Back To CSS Script</a></li>
+    </ul>
+    <div class="css-script-ads"><div id="carbon-block"></div>
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- CSSScript Demo Page -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:728px;height:90px"
+     data-ad-client="ca-pub-2783044520727903"
+     data-ad-slot="3025259193"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>
+    <div class="css-script-clear"></div>
+  </div>
+</div>
+	<div class="container">
+	<h1>Workflow Gantt Chart Example</h1>
+	<div id="gantt_here" style="height: 500px;"></div>
+</div>
+	<script src="https://cdn.jsdelivr.net/npm/simple-gantt-chart@0.0.4/dist/index.min.js"></script>
+	<script>
+		const gantt = new ganttchart.GanttChart();
+		gantt.setData([
+			{id: 1, text: 'Planning', startDate: new Date('2020-01-01'), days: 1},
+			{id: 2, text: 'Analysis', startDate: new Date('2020-01-02'), days: 1, dependencies: [1]},
+			{id: 3, text: 'Design', startDate: new Date('2020-01-04'), days: 2, dependencies: [2]},
+			{id: 4, text: 'Implementation', startDate: new Date('2020-01-07'), days: 2, dependencies: [3]},
+			{id: 5, text: 'Testing', startDate: new Date('2020-01-07'), days: 2, dependencies: [3]},
+			{id: 6, text: 'Deployment', startDate: new Date('2020-01-10'), days: 2, dependencies: [4, 5]},
+		]);
+		gantt.render(document.getElementById('gantt_here'));
+	</script>
+	<script>
+try {
+  fetch(new Request("https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js", { method: 'HEAD', mode: 'no-cors' })).then(function(response) {
+    return true;
+  }).catch(function(e) {
+    var carbonScript = document.createElement("script");
+    carbonScript.src = "//cdn.carbonads.com/carbon.js?serve=CE7DC2JW&placement=wwwcssscriptcom";
+    carbonScript.id = "_carbonads_js";
+    document.getElementById("carbon-block").appendChild(carbonScript);
+  });
+} catch (error) {
+  console.log(error);
+}
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-46156385-1', 'cssscript.com');
+  ga('send', 'pageview');
+
+</script>
+</body>
