@@ -82,9 +82,11 @@
                 <div class="col-lg-12 connectedSortable ui-sortable">
                     <div class="card">
                         <div class="card-header ui-sortable-handle" style="cursor: move;">
+
                             <h3 class="card-title">
                                 <i class="fas fa-chart-pie mr-1"></i>
                                 Sales
+
                             </h3>
                             <div class="card-tools">
                                 <ul class="nav nav-pills ml-auto">
@@ -97,7 +99,28 @@
                                 </ul>
                             </div>
                         </div>
+
+                        <div class="card-header">
+                            <form>
+
+                                <div class="form-group row">
+
+                                    <div class="col-lg-12">
+                                        <label for="" class="form-control-label">Pilih Jenis Pekerjaan</label>
+
+                                        <select id="select-state" placeholder="Pick a state..." class="form-control">
+                                            <option value="">pilih jenis pekerjaan</option>
+                                            <option value="pekerjaantanah">PEKERJAAN TANAH</option>
+                                            <option value="strukturpondasi">PEKERJAAN STRUKTUR PONDASI</option>
+                                            <option value="PEKERJAAN STRUKTUR LANTAI DASAR">PEKERJAAN STRUKTUR LANTAI DASAR</option>
+                                        </select>
+
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
                         <div class="card-body">
+
                             <canvas id="myChart" style="width:100%;"></canvas>
                         </div>
                     </div>

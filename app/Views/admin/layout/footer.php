@@ -11,38 +11,47 @@
 </aside>
 
 </div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.0.1/dist/chart.umd.min.js">
+</script>
 <script>
-    const xValues = [50, 60, 70, 80, 90, 090, 109, 120, 120, 140, 150];
-    const yValues = [7, 8, 8, 9, 9, 9, 09, 11, 14, 14, 15];
-
-    new Chart("myChart", {
-        type: "line",
+    // Get the drawing context on the canvas 
+    var myContext = document.getElementById(
+        "myChart").getContext('2d');
+    var myChart = new Chart(myContext, {
+        type: 'bar',
         data: {
-            labels: xValues,
+            labels: ["Pek. Pemasangan bouwplank", "Pek. Galian tanah untuk pondasi dan Tie beam", "Pek. Urugan kembali bekas galian",
+                "Pek. Urugan pasir di bawah pondasi & Tie beam", "Pek. Lantai kerja di bawah pondasi & Tie beam", "Pek. Buangan Tanah Bekas Galian"
+            ],
             datasets: [{
-                fill: false,
-                lineTension: 0,
-                backgroundColor: "rgba(0,0,255,1.0)",
-                borderColor: "rgba(0,0,255,0.1)",
-                data: yValues
-            }]
+                label: 'Progress',
+                backgroundColor: "yellow",
+                data: [20, 16, 4, 11, 8, 9],
+            }, {
+                label: 'Planed',
+                backgroundColor: "green",
+                data: [60, 2, 10, 6, 12, 16],
+            }],
         },
         options: {
-            legend: {
-                display: false
+            plugins: {
+                title: {
+                    display: true,
+                    text: 'JENIS PEKERJAAN - PEKERJAAN TANAH'
+                },
             },
             scales: {
-                yAxes: [{
-                    ticks: {
-                        min: 6,
-                        max: 16
-                    }
-                }],
+                x: {
+                    stacked: true,
+                },
+                y: {
+                    stacked: true
+                }
             }
         }
     });
 </script>
+
 
 <script src="https://adminlte.io/themes/v3/plugins/jquery/jquery.min.js"> </script>
 
@@ -55,7 +64,13 @@
 <script src="<?= base_url() . 'assets/admin/js/adminltejs.js' ?>"></script>
 <script src="<?= base_url() . 'assets/admin/js/dashboardjs.js' ?>"></script>
 
-
+<script>
+    $(document).ready(function() {
+        $('select').selectize({
+            sortField: 'text'
+        });
+    });
+</script>
 
 <script>
     $.widget.bridge('uibutton', $.ui.button)

@@ -18,4 +18,9 @@ class Admin extends BaseController
     {
         return view('gant');
     }
+
+    public function login()
+    {
+        return view('admin/login/p_login');
+    }
 }

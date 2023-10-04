@@ -73,6 +73,7 @@ div.ganttview-vtheader-item-name {
 	padding-left: 5px;
 	border-top: 1px solid #d0d0d0;
 	line-height: 16px;
+	word-wrap: anywhere;
 	
 }
 
