@@ -49,22 +49,25 @@
                        </a>
                    </li>
                    <li class="nav-item">
-                       <a href="pages/widgets.html" class="nav-link">
+                       <a href="<?= base_url('admin/inputproyek') ?>" class="nav-link">
                            <i class="nav-icon fas fa-file"></i>
                            <p>
-                               Laporan Harian
-                               <span class="right badge badge-danger">New</span>
+                               Input Proyek
+
                            </p>
                        </a>
                    </li>
-                   <li class="nav-item">
-                       <a href="pages/widgets.html" class="nav-link">
+                   <li class="nav-item menu-is-opening menu-open">
+
+                       <a href="<?= base_url('admin/datapekerjaan') ?>" class="nav-link">
                            <i class="nav-icon fas fa-tasks"></i>
                            <p>
-                               Laporan Mingguan
-                               <span class="right badge badge-danger">New</span>
+                               Data Pekerjaan
+
                            </p>
                        </a>
+
+
                    </li>
                    <li class="nav-item">
                        <a href="pages/widgets.html" class="nav-link">
